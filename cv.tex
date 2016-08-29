@@ -1,0 +1,181 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{setspace}
+\usepackage{enumitem}
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Mihai \textsc{Dragan}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Romania  | 17 May 1989 \\
+    \textsc{Address:}   & 31 Michaelmas Road, Coventry, UK, CV3 6HF \\
+    \textsc{Phone:}     & +44 (0) 7918 775 775\\
+    \textsc{email:}     & \href{mailto:mihai_dragan@outlook.com}{mihai\_dragan@outlook.com}\\
+    \textsc{github:}    & \href{https://github.com/PastravMD}{github.com/PastravMD}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & \textbf{Project Engineer} at \textsc{Autoliv Electronics} UK \\
+ \textsc{06.2015} & Driver Assistance Domain Controller \\
+&\footnotesize{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[topsep=0pt]
+  \item Train and support customer on prototyping with Linux AUTOSAR Framework, update vehicle computers and sensors, debug control software on the test track. 
+  \item Develop system management, performance analysis and inter-chip OS synchronization software
+  \item Research technical shortcomings and propose solutions.
+  \item Conduct technical interviews for application engineers.
+\end{itemize}
+\end{minipage}
+}\\
+ \multicolumn{2}{c}{} \\
+ 
+\textsc{06.2015} & \textbf{Software Engineer} at \textsc{Autoliv Electronics} Romania \\
+\textsc{06.2013} & Intelligent Drive Controller \\
+&\footnotesize{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[topsep=0pt]
+  \item Designed and developed safety critical inter-processor communication and memory protection mechanisms in C, according to MISRA and ISO 26262 standards. 
+  \item Defined MCU memory mapping, integrated device drivers and memory stack, optimized Tricore MCU setup for runtime. 
+  \item Scripted complete debugger environment and testing framework
+  \item Held internal PRACTICE trainings. Trained two new developers.
+\end{itemize}
+\end{minipage}
+}\\
+\multicolumn{2}{c}{} \\
+
+\textsc{06.2013} & \textbf{Software Engineer} at \textsc{Continental Automotive} Romania\\
+\textsc{06.2012} & Stereo Camera ECU\\
+&\footnotesize{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[topsep=0pt]
+\item Integrated and configured memory stack and diagnostic services.
+\end{itemize}
+\end{minipage}
+}\\
+
+\multicolumn{2}{c}{} \\
+\textsc{03.2012} &  \textbf{Software Developer} at  \textsc{KrbonSoft SRL}\\
+\textsc{11.2011} & \footnotesize{
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[topsep=0pt]
+\item Ported multi-axis CNC machine firmware to newer microcontroller derivative.
+\end{itemize}
+\end{minipage}
+}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{cl}	
+ \textbf{(on hold)}  & \textbf{Master's Degree:} Automotive Embedded Software \\
+\textsc{2014} & Polytechnic University of Timisoara, Romania \\
+\textsc{2012}\\
+\\
+\textsc{2012} & \textbf{Bachelor's Degree:} Automatic Control and Computer Science\\
+\textsc{2008} & Polytechnic University of Bucharest, Romania \\
+\end{tabular}
+
+%Section: Open Source
+\section{Open Source contribution}
+\begin{tabular}{rl}
+2016 & \href{http://adapilot.likeabird.eu/}{AdaPilot project} \\
+& Develop a code generator capable of creating Ada specification files of hardware \\
+& register definitions for Texas Instruments devices.
+\end{tabular}
+
+%Section: Training and Courses
+\section{Professional training}
+\begin{tabular}{lll}
+ \textsc{2016} & Embedded Linux Development & \footnotesize Linux Foundation\normalsize\\
+ \textsc{2016} & Linux Kernel Internals and Development & \footnotesize Linux Foundation \normalsize  \\
+ \textsc{2014} & AUTOSAR in practice & \footnotesize Vector Informatik \normalsize  \\
+ \textsc{2014} & Aurix Performance Training & \footnotesize Infineon Technologies \normalsize\\
+ \textsc{2010} & CISCO Certified Network Associate 1: Network Fundamentals & \footnotesize Telecom Academy \normalsize
+\end{tabular}
+
+
+% Skills
+\begin{spacing}{1.2}
+\section{Experience and skills}
+\begin{tabular}{rl}
+\textsc{Languages:} & ANSI C, Assembler, PRACTICE script, Ada 2012 \\
+\textsc{Operating Systems:} & OSEK, FreeRTOS, \textsc{Linux}, TI SYS/BIOS \\
+\textsc{Communication:} & Serial buses (CAN, SPI, I2C, UART, FlexRay) \\
+\textsc{Equipment:} & Debuggers, Oscilloscope, Logic Analyzers \\
+\textsc{Software Engineering:} & Software life cycle and development process\\
+& version control, issue tracking, documentation\\
+\textsc{Miscellaneous:} & microcontrollers, embedded systems, \\
+& AUTOSAR architecture, basic schematic and PCB layout \\
+& Interfacing with customers and suppliers\\
+\end{tabular}
+\end{spacing}
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{ll}
+ \textsc{Romanian:}& Native\\
+\textsc{English:}& Fluent\\
+\textsc{German:}& Elementary\\
+\end{tabular}
+
+\end{document}
